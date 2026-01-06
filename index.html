@@ -6,181 +6,60 @@
     <title>Lee Yu Rim - Portfolio</title>
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-color: #333;
             --accent-color: #bbe1de;
             --border-color: #eee;
         }
         body {
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            font-family: 'Pretendard', -apple-system, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
+            color: #333;
             margin: 0;
             padding: 0;
-            background-color: var(--bg-color);
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        .header-img, .footer-img {
-            width: 100%;
-            display: block;
-        }
         .center { text-align: center; }
-        h2 { border-bottom: 2px solid var(--accent-color); padding-bottom: 10px; margin-top: 40px; }
-        h3 { margin-top: 30px; }
-        .badge-group { margin: 10px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+        .header-img, .footer-img { width: 100%; display: block; }
+        
+        /* 프로젝트 박스 디자인 */
         .project-section {
-            background: #fcfcfc;
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
-        .project-img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin: 15px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .stack-group { color: gray; margin-bottom: 20px; }
-        .stack-title { font-weight: bold; font-size: 0.9em; margin-top: 15px; display: block; }
+        
+        /* 반응형 이미지 설정 */
+        img { max-width: 100%; height: auto; }
+        .project-img { border-radius: 8px; margin: 20px 0; }
+        
+        h2 { border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
+        h3 { color: #222; }
+        .badge-group { margin: 10px 0; display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
+        .stack-group h4 { margin-bottom: 10px; color: #666; }
         blockquote {
             border-left: 4px solid var(--accent-color);
             padding-left: 15px;
-            color: #666;
-            font-style: italic;
-            margin: 10px 0;
+            margin: 15px 0;
+            color: #555;
+            font-weight: 500;
         }
         ul { padding-left: 20px; }
-        .role { background: #f0f0f0; padding: 10px 15px; border-radius: 5px; font-weight: bold; }
+        .role-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #333;
+        }
     </style>
 </head>
 <body>
 
     <img src="https://capsule-render.vercel.app/api?type=wave&color=bbe1de&height=200&section=header" class="header-img">
 
-    <div class="container">
-        <div class="center">
-            <h1>🚀 About Me</h1>
-            <h2>Lee Yu Rim</h2>
-            <a href="https://toulim0525.tistory.com/" target="_blank">
-                <img src="https://img.shields.io/badge/Tistory-Blog-FFA500?style=for-the-badge&logo=Blog&logoColor=white" alt="Tistory Blog">
-            </a>
-
-            <p>🌏 사람들에게 긍정적인 영향을 주는 SW를 개발하고 싶습니다.</p>
-            <p>🌟 개발 과정에서 마주하는 오류를 해결하며 성취감을 느낍니다.</p>
-            <p>🌱 동료들과 함께 소통하며 함께 성장하고 싶습니다.</p>
-
-            <h2>🛠 Skills</h2>
-            <div class="badge-group">
-                <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
-                <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=openjdk&logoColor=white">
-                <img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-            </div>
-            <div class="badge-group">
-                <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-                <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css&logoColor=white">
-                <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-                <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-                <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
-            </div>
-            <div class="badge-group">
-                <a href="https://solved.ac/toulim0620"><img src="http://mazassumnida.wtf/api/v2/generate_badge?boj=toulim0620"></a>
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=urimL&layout=compact">
-            </div>
-        </div>
-
-        <div class="center">
-            <h1 style="margin-top: 60px;">📝 Projects</h1>
-        </div>
-
-        <div class="project-section">
-            <h3>🎹 FLOFI</h3>
-            <blockquote>내가 원하는 음악을 Lo-Fi로!</blockquote>
-            <img src="https://github.com/user-attachments/assets/cce072ec-96cc-4593-a746-67416d9f9d2a" class="project-img" alt="FLOFI Screenshot">
-            
-            <h4>📖 Description</h4>
-            <ul>
-                <li>이화여자대학교 2023-1 3인 졸업 프로젝트 (2022.09.01 ~ 2023.05.31)</li>
-                <li>Style Transfer 기술을 활용한 음악 스타일 변환 웹 서비스</li>
-                <li>교내 포스터세션 최우수상 수상</li>
-            </ul>
-
-            <h4>🔧 Stack</h4>
-            <div class="stack-group">
-                <span class="stack-title">Environment</span>
-                <img src="https://img.shields.io/badge/django-092E20?style=for-the-badge&logo=django&logoColor=white">
-                <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-                
-                <span class="stack-title">Development</span>
-                <img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white">
-                <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-                <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-            </div>
-
-            <h4>⭐ Main Feature</h4>
-            <ul>
-                <li>Groove2Groove 모델 연동 및 Lo-Fi 커스텀 학습</li>
-                <li>Tone.js와 Magenta API를 활용한 오디오 후처리 (BPM, Reverb 조정)</li>
-                <li>백색소음 플레이어, 투두리스트, 뽀모도로 타이머</li>
-            </ul>
-
-            <p class="role">👨‍💻 Role: 리더 & 프론트엔드 개발자</p>
-        </div>
-
-        <div class="project-section">
-            <h3>📚 Workfolio</h3>
-            <blockquote>취준생을 위한 통합 플랫폼</blockquote>
-            
-            <h4>📖 Description</h4>
-            <ul>
-                <li>2024.01.10 ~ 2024.04.01</li>
-                <li>자기소개서, 일정, 예상 면접 질문 등 취업 준비 통합 관리 서비스</li>
-            </ul>
-
-            <h4>🔧 Stack</h4>
-            <div class="stack-group">
-                <img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white">
-                <img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white">
-                <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">
-                <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white">
-            </div>
-
-            <h4>⭐ Main Feature</h4>
-            <ul>
-                <li>구글 캘린더 API 연동 일정 관리</li>
-                <li>기업별 자기소개서 및 기업 분석 통합 관리</li>
-                <li>JWT & Spring Security 소셜 로그인</li>
-            </ul>
-
-            <p class="role">👨‍💻 Role: 백엔드 개발자 (REST API & DB 설계)</p>
-        </div>
-
-        <div class="project-section">
-            <h3>📺 영화 산업 분석 웹</h3>
-            <blockquote>영화 산업 빅데이터를 활용하여 분석한 웹페이지</blockquote>
-            
-            <h4>📖 Description</h4>
-            <ul>
-                <li><빅데이터 응용> 수업 프로젝트 (2022.10.01 ~ 2022.11.01)</li>
-                <li>한국 영화 관람객 수 및 매출 빅데이터 가공 및 시각화</li>
-            </ul>
-
-            <h4>🔧 Stack</h4>
-            <div class="stack-group">
-                <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white">
-                <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white">
-                <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
-            </div>
-
-            <p class="role">👨‍💻 Role: 백엔드 개발자 (DB 설계, 쿼리 최적화)</p>
-        </div>
-    </div>
-
-    <img src="https://capsule-render.vercel.app/api?type=wave&color=bbe1de&height=200&section=footer" class="footer-img">
-
-</body>
-</html>
+    <div class="
