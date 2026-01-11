@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lee Yu Rim - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="top-container">
+        <section class="section-card about-card">
+          <div class="center">
+            <span class="title-pill">🚀 About Me</span>
+          </div>
+          <div class="about-inner">
+            <div class="center">
+              <h3 class="name-text">Lee Yu Rim</h3>
+              <div class="boj-badge">
+                <a href="https://solved.ac/toulim0620" target="_blank">
+                  <img
+                    src="http://mazassumnida.wtf/api/v2/generate_badge?boj=toulim0620"
+                    alt="Boj Badge"
+                  />
+                </a>
+              </div>
+              <div class="badge-group">
+                <a href="https://toulim0525.tistory.com/" target="_blank">
+                  <img
+                    src="https://img.shields.io/badge/Tistory-Blog-FFA500?style=for-the-badge&logo=Blog&logoColor=white"
+                    alt="Tistory Blog"
+                  />
+                </a>
+              </div>
+            </div>
+            <blockquote>
+              🌏 <strong>사람들에게 긍정적인 영향을 주고 싶습니다.</strong
+              ><br />
+              🌟 <strong>오류 해결에서 성취감을 느낍니다.</strong><br />
+              🌱 <strong>소통하며 함께 성장하고 싶습니다.</strong>
+            </blockquote>
+          </div>
+        </section>
+
+        <section class="section-card skills-card">
+          <div class="center">
+            <span class="title-pill">🛠 Skills</span>
+          </div>
+          <div class="skills-list">
+            <div class="skill-category">
+              <h4>Language</h4>
+              <div class="badge-group">
+                <img
+                  src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=openjdk&logoColor=white"
+                />
+                <img
+                  src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"
+                />
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Framework / Database</h4>
+              <div class="badge-group">
+                <img
+                  src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"
+                />
+                <img
+                  src="https://img.shields.io/badge/Flask-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"
+                />
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Database</h4>
+              <div class="badge-group">
+                <img
+                  src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white"
+                />
+                <img
+                  src="https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white"
+                />
+              </div>
+            </div>
+            <div class="skill-category">
+              <h4>Tools / Etc</h4>
+              <div class="badge-group">
+                <img
+                  src="https://img.shields.io/badge/Github-181717?style=for-the-badge&logo=github&logoColor=white"
+                />
+                <img
+                  src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-card projects-card">
+          <div class="center">
+            <span class="title-pill">📝 Projects</span>
+          </div>
+          <div class="project-grid">
+            <div class="project-square" onclick="openModal('flofi')">
+              <span class="emoji">🎹</span>
+              <div class="p-name">FLOFI</div>
+            </div>
+            <div class="project-square" onclick="openModal('workfolio')">
+              <span class="emoji">📝</span>
+              <div class="p-name">Workfolio</div>
+            </div>
+            <div class="project-square" onclick="openModal('movie')">
+              <span class="emoji">📺</span>
+              <div class="p-name">Movie Web</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <script>
+      async function openModal(projectId) {
+        const response = await fetch(`${projectId}.html`);
+        const html = await response.text();
+        document.getElementById("modalBody").innerHTML = html;
+        document.getElementById("projectModal").style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        document.getElementById("projectModal").style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("projectModal")) {
+          closeModal();
+        }
+      };
+    </script>
+  </body>
+</html>

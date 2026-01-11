@@ -1,0 +1,270 @@
+/* --- 1. 기본 스타일 (부피 축소) --- */
+* { box-sizing: border-box; } /* 요소 깨짐 방지 */
+
+body {
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    background-color: #f8f9fa;
+    font-size: 14.5px; /* 전체 글씨 크기 축소 */
+}
+
+.container {
+    max-width: 1300px; /* 3열을 위해 가로폭 확장 */
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.center { text-align: center; }
+
+/* --- 2. 메인 페이지 레이아웃 (3열 인라인) --- */
+.top-container {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+    flex-wrap: wrap;       /* 창이 좁아지면 아래로 내려가도록 설정 */
+    justify-content: center; 
+}
+
+.section-card {
+    background: #fff;
+    text-align: center;
+
+    border-radius: 12px;
+    padding: 25px 20px; 
+    margin-bottom: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+}
+
+.about-card { flex: 1; min-width: 320px; }
+.skills-card { flex: 0.7; min-width: 200px; }
+.projects-card { flex: 0.7; min-width: 150px; }
+
+.title-pill {
+    display: inline-block;
+    background-color: #bbe1de;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem; 
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.name-text { margin: 10px 0 5px; font-size: 1.5rem; font-weight: 800; }
+.boj-badge img { width: 100%; max-width: 180px; margin-top: 10px; }
+
+blockquote {
+    padding: 10px 15px;
+    margin: 15px 0 0;
+    background: #f9fdfd;
+    font-size: 0.85rem; 
+    text-align: center;
+    border-radius: 0 6px 6px 0;
+}
+
+h4 {
+    font-size: 0.95rem;
+    margin: 12px 0 6px;
+    border-bottom: 2px solid #f1f3f5;
+    display: inline-block;
+}
+
+.badge-group { margin: 6px 0; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.skills-list .badge-group { justify-content: center; }
+.badge-group img { height: 20px; margin-top: 10px;}
+
+/* --- 3. 프로젝트 그리드 (가운데 정렬) --- */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+.project-square {
+    width: 100%;          
+    max-width: 180px;    
+    padding: 12px 15px;     
+    height: auto;           
+    min-height: 45px;       
+    border: 2px solid #bbe1de;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;    
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.project-square:hover { transform: translateX(5px); background: #f0f9f8; }
+.emoji { font-size: 1.5rem; }
+.p-name { font-weight: bold; font-size: 0.95rem; }
+
+/* --- 4. 모달 시스템 (⚠️ 유림님 원본 정렬 유지 + 부피 축소) --- */
+.modal {
+    display: none; position: fixed; z-index: 9999;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
+    overflow-y: auto; 
+}
+
+.modal-content {
+    background-color: #fff; 
+    margin: 40px auto; 
+    padding: 35px; /* 패딩 축소 */
+    border-radius: 16px; 
+    width: 85%; 
+    max-width: 900px; /* 모달 너비 최적화 */
+    position: relative; 
+    max-height: 85vh; 
+    overflow-y: auto;
+    font-size: 0.95rem; /* 글자 크기 축소 (기존 1.1rem) */
+    line-height: 1.6;
+    color: #444;
+}
+
+.modal-content .project-name { font-size: 1.8rem; font-weight: 800; color: #2c3e50; border: none; margin-bottom: 5px; }
+.modal-content .project-tagline { font-size: 1.1rem; color: #666; margin-bottom: 25px; }
+
+.modal-content .section-title {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 1.45rem; font-weight: 700; color: #2c3e50;
+    margin: 50px 0 15px; padding-bottom: 8px; border-bottom: 0px solid #f1f3f5;
+}
+
+/* --- 모달 내 카드 공통 스타일 --- */
+.modal-content .trouble-card {
+    background: #fff; 
+    border: 1px solid #e9ecef; 
+    border-left: 5px solid #bbe1de; 
+    padding: 15px;
+    padding-right: 30px;
+    margin-bottom: 20px; 
+    border-radius: 4px 10px 10px 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.trouble-card > hr {
+    border : 0px;
+    border-top: 1px dotted #afd0cd;
+    margin-top: 35px;
+    padding: 10px;
+}
+
+/* 체크 표시 설정 */
+.role-list > li, .tech-list > li {
+    position: relative;
+    padding-left: 25px;
+    display: block;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.role-list > li::before, .tech-list > li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #3eafaf;
+    font-weight: bold;
+}
+
+.wf-img {
+    display: flex !important;      /* 강제로 Flex 적용 */
+    flex-direction: row !important; /* 가로 방향 강제 */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0 !important;
+}
+
+.wf-img img {
+    /* 기존 modal-content img의 중앙 정렬 마진과 너비를 무시함 */
+    width: 48% !important;         /* 가로의 절반 정도 차지 */
+    flex: 1;
+    max-width: 430px !important;
+    margin: 0 !important;          /* auto 마진 해제 */
+    display: inline-block;
+}
+
+/* --- Trouble Shooting 정렬 (유림님 성공 수치 70px 유지) --- */
+.modal-content .trouble-card > strong {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px; 
+    margin-left: 30px; /* 들여쓰기 미세 조정 */
+    font-size: 1.05rem;
+    color: #2c3e50;
+}
+
+.modal-content .trouble-card > strong::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #60c6c6;
+    font-weight: bold;
+}
+
+.modal-content .trouble-card div {
+    display: flex;
+    align-items: flex-start; 
+    gap: 12px;               
+    margin-top: 0px;         
+    margin-bottom: 12px;
+    padding-left: 70px; 
+}
+
+.status-label {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    flex-shrink: 0;         
+    text-align: center;
+    width: 80px;
+}
+
+.label-problem { background: #fff1f0; color: #cf1322; border: 1px solid #ffa39e; }
+.label-solve { background: #f6ffed; color: #389e0d; border: 1px solid #b7eb8f; }
+
+/* --- Tech Stack 배지 정렬 --- */
+.tech-badge {
+    display: inline-block;
+    background: #eefaf9;
+    color: #3eafaf;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0px; 
+    margin-top: 10px;
+    margin-left: 35px; 
+    border: 1px solid #d1f0ed;
+}
+
+.tech-list {
+    padding-left: 45px !important;
+    margin: 0 0 20px 0;
+}
+
+.tech-list li {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tech-why {
+    margin-top : 5px;
+}
+/* 이미지 및 닫기 버튼 축소 */
+.modal-content img { display: block; width: 85%; max-width: 650px; margin: 25px auto; border-radius: 12px; }
+.close-btn { position: absolute; right: 20px; top: 15px; font-size: 35px; color: #aaa; cursor: pointer; }
+.close-btn:hover { color: #333; }
