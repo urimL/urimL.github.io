@@ -1,17 +1,17 @@
 /* --- 1. 기본 스타일 (부피 축소) --- */
-* { box-sizing: border-box; } /* 요소 깨짐 방지 */
+* { box-sizing: border-box; } 
 
 body {
     font-family: 'Pretendard', sans-serif;
     line-height: 1.5;
     color: #333;
     margin: 0;
+    padding-top: 5%;
     background-color: #f8f9fa;
-    font-size: 14.5px; /* 전체 글씨 크기 축소 */
-}
+    font-size: 14.5px; 
 
 .container {
-    max-width: 1300px; /* 3열을 위해 가로폭 확장 */
+    max-width: 1300px; 
     margin: 30px auto;
     padding: 0 20px;
 }
@@ -75,6 +75,7 @@ h4 {
 .skills-list .badge-group { justify-content: center; }
 .badge-group img { height: 20px; margin-top: 10px;}
 
+
 /* --- 3. 프로젝트 그리드 (가운데 정렬) --- */
 .project-grid {
     display: flex;
@@ -88,25 +89,32 @@ h4 {
 .project-square {
     width: 100%;          
     max-width: 180px;    
-    padding: 12px 15px;     
-    height: auto;           
-    min-height: 45px;       
+    padding: 12px 15px;    
+    
+    /* 1. 고정 높이 관련 설정을 제거하거나 최소 높이만 유지 */
+    height: auto !important;     /* 콘텐츠 양에 따라 늘어나도록 설정 */
+    min-height: fit-content;     /* 내용물에 딱 맞게 최소 크기 설정 */
+    
     border: 2px solid #bbe1de;
     border-radius: 12px;
+    
+    /* 2. 내부 요소 정렬 방식 확인 */
     display: flex;
-    flex-direction: row;    
+    flex-direction: column;      
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;                   
+    
     cursor: pointer;
     transition: 0.2s ease;
+    overflow: hidden;            /* 내용이 넘쳐서 깨지는 것 방지 */
 }
 
 .project-square:hover { transform: translateX(5px); background: #f0f9f8; }
 .emoji { font-size: 1.5rem; }
 .p-name { font-weight: bold; font-size: 0.95rem; }
 
-/* --- 4. 모달 시스템 (⚠️ 유림님 원본 정렬 유지 + 부피 축소) --- */
+/* --- 4. 모달 시스템 */
 .modal {
     display: none; position: fixed; z-index: 9999;
     left: 0; top: 0; width: 100%; height: 100%;
@@ -117,14 +125,14 @@ h4 {
 .modal-content {
     background-color: #fff; 
     margin: 40px auto; 
-    padding: 35px; /* 패딩 축소 */
+    padding: 35px; 
     border-radius: 16px; 
     width: 85%; 
-    max-width: 900px; /* 모달 너비 최적화 */
+    max-width: 900px; 
     position: relative; 
     max-height: 85vh; 
     overflow-y: auto;
-    font-size: 0.95rem; /* 글자 크기 축소 (기존 1.1rem) */
+    font-size: 0.95rem; 
     line-height: 1.6;
     color: #444;
 }
@@ -192,19 +200,18 @@ h4 {
     display: inline-block;
 
     /* --- 잘림 방지 설정 --- */
-    height: auto !important;      /* 높이를 강제하지 않음 */
-    object-fit: scale-down !important; /* 이미지 비율 절대 보존 */
-    /* background-color 삭제됨 - 회색 안 나옴 */
+    height: auto !important;      
+    object-fit: scale-down !important; 
     border-radius: 8px;
 }
 
-/* --- Trouble Shooting 정렬 (유림님 성공 수치 70px 유지) --- */
+/* --- Trouble Shooting 정렬  --- */
 .modal-content .trouble-card > strong {
     display: block;
     position: relative;
     padding-left: 25px;
     margin-bottom: 8px; 
-    margin-left: 30px; /* 들여쓰기 미세 조정 */
+    margin-left: 30px; 
     font-size: 1.05rem;
     color: #2c3e50;
 }
