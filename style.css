@@ -6,7 +6,8 @@ body {
     line-height: 1.5;
     color: #333;
     margin: 0;
-    padding-top: 5%;
+    padding-top: 2%;
+    padding-bottom: 3%;
     background-color: #f8f9fa;
     font-size: 14.5px; 
 
@@ -37,7 +38,7 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
 }
 
-.about-card { flex: 1; min-width: 320px; }
+.about-card { flex: 1; min-width: 350px; }
 .skills-card { flex: 0.7; min-width: 200px; }
 .projects-card { flex: 0.7; min-width: 150px; }
 
@@ -83,6 +84,24 @@ h4 {
     align-items: center;
     gap: 10px;
     margin-top: 10px;
+}
+
+@media (max-width: 1065px) { /* 3열이 깨지는 시점 (상황에 따라 조절 가능) */
+    .projects-card {
+        flex: 1 1 100%; /* 프로젝트 카드가 화면 전체 너비를 차지하게 함 */
+    }
+
+    .project-grid {
+        flex-direction: row !important; /* 세로에서 가로 정렬로 변경 */
+        flex-wrap: wrap;               /* 자리가 부족하면 다음 줄로 넘김 */
+        justify-content: center;       /* 가운데 정렬 */
+        gap: 25px;                     /* 카드 사이 간격 조절 */
+    }
+
+    .project-square {
+        max-width: 200px;              /* 가로 나열 시 적절한 너비 확보 */
+        flex: 0 1 auto;                /* 내용에 맞게 크기 조절 */
+    }
 }
 
 
