@@ -1,3 +1,78 @@
+/* --- 0. AI 검색창 --- */
+.ai-search-wrap {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.ai-search-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.ai-search-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #bbe1de;
+  border-radius: 50px;
+  padding: 6px 6px 6px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: border-color 0.2s;
+}
+
+.ai-search-bar:focus-within {
+  border-color: #3eafaf;
+}
+
+.ai-search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: transparent;
+  color: #333;
+}
+
+.ai-search-bar button {
+  background: #bbe1de;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.ai-search-bar button:hover { background: #9dd0cc; }
+.ai-search-bar button:disabled { background: #ddf0ee; cursor: not-allowed; color: #999; }
+
+.ai-answer-box {
+  display: none;
+  margin-top: 14px;
+  background: #fff;
+  border: 1px solid #e0f0ee;
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.7;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  white-space: pre-wrap;
+}
+
+.ai-answer-box.loading {
+  color: #999;
+  font-style: italic;
+}
+
 /* --- 1. 기본 스타일 (부피 축소) --- */
 * { box-sizing: border-box; } 
 

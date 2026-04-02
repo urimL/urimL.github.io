@@ -8,6 +8,15 @@
   </head>
   <body>
     <div class="container">
+      <div class="ai-search-wrap">
+        <p class="ai-search-label">✨ Ask about Yu Rim</p>
+        <div class="ai-search-bar">
+          <input id="ai-input" type="text" placeholder="이유림 개발자에 대해 궁금한 점을 물어보세요" maxlength="200" />
+          <button id="ai-btn">→</button>
+        </div>
+        <div id="ai-answer" class="ai-answer-box"></div>
+      </div>
+
       <div class="top-container">
         <section class="section-card about-card">
           <div class="center">
@@ -122,6 +131,45 @@
         <div id="modalBody"></div>
       </div>
     </div>
+
+    <script>
+      (function () {
+        const API_URL = 'http://localhost:8080/api/v1/profile/chat';
+        const input = document.getElementById('ai-input');
+        const btn = document.getElementById('ai-btn');
+        const answerBox = document.getElementById('ai-answer');
+
+        async function ask() {
+          const question = input.value.trim();
+          if (!question) return;
+          btn.disabled = true;
+          answerBox.className = 'ai-answer-box loading';
+          answerBox.style.display = 'block';
+          answerBox.textContent = '답변을 생성 중입니다...';
+          try {
+            const res = await fetch(API_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ question })
+            });
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            answerBox.className = 'ai-answer-box';
+            answerBox.textContent = data.answer;
+          } catch {
+            answerBox.className = 'ai-answer-box';
+            answerBox.textContent = '오류가 발생했습니다. 백엔드 서버가 실행 중인지 확인해 주세요.';
+          } finally {
+            btn.disabled = false;
+          }
+        }
+
+        btn.addEventListener('click', ask);
+        input.addEventListener('keydown', e => {
+          if (e.key === 'Enter') ask();
+        });
+      })();
+    </script>
 
     <script>
       async function openModal(projectId) {
