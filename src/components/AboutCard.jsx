@@ -22,7 +22,7 @@ export default function AboutCard() {
           </div>
         </div>
         <blockquote>
-          🌏 <strong>사람들에게 긍정적인 영향을 주고 싶습니다.</strong><br />
+          🌏 <strong>사람들의 일상에 실질적인 가치를 주고 싶습니다.</strong><br />
           🌟 <strong>오류 해결에서 성취감을 느낍니다.</strong><br />
           🌱 <strong>소통하며 함께 성장하고 싶습니다.</strong>
         </blockquote>

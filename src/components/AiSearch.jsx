@@ -66,11 +66,6 @@ export default function AiSearch() {
         <button className="search-btn" onClick={() => askAI()} disabled={loading}>✦</button>
       </div>
 
-      <div className="chips">
-        {CHIPS.map(chip => (
-          <button key={chip} className="chip" onClick={() => askAI(chip)}>{chip}</button>
-        ))}
-      </div>
 
       {visible && (
         <div className="answer-wrap visible" style={{ display: 'block' }}>
