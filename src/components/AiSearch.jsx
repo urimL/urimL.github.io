@@ -47,6 +47,7 @@ export default function AiSearch() {
   return (
     <div className="ai-search-wrap">
       <p className="ai-search-label">✨ ASK ABOUT ME!</p>
+      <p className="ai-search-desc">저를 소개하는 RAG 기반 AI 챗봇입니다. 기술 스택, 프로젝트, 경험 등 뭐든 물어보세요!</p>
       <div className="search-wrap">
         <span className="search-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

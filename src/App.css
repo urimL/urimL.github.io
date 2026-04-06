@@ -6,11 +6,18 @@
 }
 
 .ai-search-label {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #2c3e50;
   margin-bottom: 12px;
   letter-spacing: 0.01em;
+}
+
+.ai-search-desc {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #6e8fa0;
+    margin-bottom: 10px;
 }
 
 .search-wrap {
@@ -34,7 +41,7 @@
   flex: 1;
   border: none;
   outline: none;
-  font-size: 15px;
+  font-size: 14px;
   font-family: inherit;
   color: #2c3e50;
   background: transparent;
@@ -46,7 +53,7 @@
   border: none;
   border-radius: 50px;
   padding: 10px 16px;
-  font-size: 16px;
+  font-size: 15px;
   font-family: inherit;
   cursor: pointer;
   white-space: nowrap;
@@ -69,7 +76,7 @@
   border: 1px solid #bbe1de;
   border-radius: 99px;
   padding: 6px 15px;
-  font-size: 13px;
+  font-size: 12px;
   font-family: inherit;
   color: #3eafaf;
   cursor: pointer;
@@ -90,7 +97,7 @@
   transform: translateY(0);
 }
 .question-echo {
-  font-size: 13px;
+  font-size: 12px;
   color: #94b4c4;
   margin-bottom: 12px;
   padding-left: 12px;
@@ -122,9 +129,9 @@
   display: flex; align-items: center; justify-content: center;
   font-size: 13px;
 }
-.ai-name { font-size: 13px; font-weight: 600; color: #7aa8be; }
+.ai-name { font-size: 12px; font-weight: 600; color: #7aa8be; }
 .answer-text {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.8;
   color: #374151;
   white-space: pre-wrap;
@@ -149,6 +156,8 @@
 /* --- 1. 기본 스타일 --- */
 * { box-sizing: border-box; }
 
+html { font-size: 14px; }
+
 body {
     font-family: 'Pretendard', sans-serif;
     line-height: 1.5;
@@ -157,7 +166,7 @@ body {
     padding-top: 40px;
     padding-bottom: 60px;
     background-color: #f8f9fa;
-    font-size: 14.5px;
+    font-size: 14px;
 }
 
 .container {
@@ -205,9 +214,9 @@ body {
     text-align: center;
 }
 .edu-item:last-child { border-bottom: none; }
-.edu-period { font-size: 0.75rem; color: #3eafaf; font-weight: 600; margin-bottom: 4px; }
-.edu-school { font-size: 0.95rem; font-weight: 700; color: #2c3e50; margin-bottom: 3px; }
-.edu-major { font-size: 0.82rem; color: #888; }
+.edu-period { font-size: 0.72rem; color: #3eafaf; font-weight: 600; margin-bottom: 4px; }
+.edu-school { font-size: 0.9rem; font-weight: 700; color: #2c3e50; margin-bottom: 3px; }
+.edu-major { font-size: 0.78rem; color: #888; }
 
 /* Projects 하단 한 줄 */
 .projects-row {
@@ -231,26 +240,26 @@ body {
     background-color: #bbe1de;
     padding: 6px 20px;
     border-radius: 50px;
-    font-size: 0.9rem; 
+    font-size: 0.82rem;
     font-weight: bold;
     margin-bottom: 20px;
     color: #2c3e50;
 }
 
-.name-text { margin: 10px 0 5px; font-size: 1.5rem; font-weight: 800; }
+.name-text { margin: 10px 0 5px; font-size: 1.35rem; font-weight: 800; }
 .boj-badge img { width: 100%; max-width: 180px; margin-top: 10px; }
 
 blockquote {
     padding: 10px 15px;
     margin: 15px 0 0;
     background: #f9fdfd;
-    font-size: 0.85rem; 
+    font-size: 0.82rem;
     text-align: center;
     border-radius: 0 6px 6px 0;
 }
 
 h4 {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin: 8px 0 3px;
     border-bottom: 2px solid #f1f3f5;
     display: inline-block;
@@ -280,24 +289,18 @@ h4 {
 
 
 .project-square {
-    width: 100%;          
-    max-width: 180px;    
-    padding: 12px 15px;    
-    
-    /* 1. 고정 높이 관련 설정을 제거하거나 최소 높이만 유지 */
-    height: auto !important;     /* 콘텐츠 양에 따라 늘어나도록 설정 */
-    min-height: fit-content;     /* 내용물에 딱 맞게 최소 크기 설정 */
-    
+    width: 100%;
+    max-width: 180px;
+    padding: 12px 15px;
+    height: auto !important;
+    min-height: fit-content;
     border: 2px solid #bbe1de;
     border-radius: 12px;
-    
-    /* 2. 내부 요소 정렬 방식 확인 */
     display: flex;
-    flex-direction: column;      
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;                   
-    
+    gap: 8px;
     cursor: pointer;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
     overflow: hidden;
@@ -310,50 +313,50 @@ h4 {
     background: #f0f9f8;
 }
 .project-square:active { transform: translateY(-2px) scale(1.01); }
-.emoji { font-size: 1.5rem; transition: transform 0.2s ease; }
+.emoji { font-size: 1.4rem; transition: transform 0.2s ease; }
 .project-square:hover .emoji { transform: scale(1.2); }
-.p-name { font-weight: bold; font-size: 0.95rem; }
+.p-name { font-weight: bold; font-size: 0.9rem; }
 
 /* --- 4. 모달 시스템 */
 .modal {
     display: none; position: fixed; z-index: 9999;
     left: 0; top: 0; width: 100%; height: 100%;
     background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .modal-content {
-    background-color: #fff; 
-    margin: 40px auto; 
-    padding: 35px; 
-    border-radius: 16px; 
-    width: 85%; 
-    max-width: 900px; 
-    position: relative; 
-    max-height: 85vh; 
+    background-color: #fff;
+    margin: 40px auto;
+    padding: 35px;
+    border-radius: 16px;
+    width: 85%;
+    max-width: 900px;
+    position: relative;
+    max-height: 85vh;
     overflow-y: auto;
-    font-size: 0.95rem; 
+    font-size: 0.9rem;
     line-height: 1.6;
     color: #444;
 }
 
-.modal-content .project-name { font-size: 1.8rem; font-weight: 800; text-align: center; color: #2c3e50; border: none; margin-bottom: 5px; }
-.modal-content .project-tagline { font-size: 1.1rem; color: #666; text-align: center; margin-bottom: 25px; }
+.modal-content .project-name { font-size: 1.65rem; font-weight: 800; text-align: center; color: #2c3e50; border: none; margin-bottom: 5px; }
+.modal-content .project-tagline { font-size: 1rem; color: #666; text-align: center; margin-bottom: 25px; }
 
 .modal-content .section-title {
     display: flex; align-items: center; gap: 8px;
-    font-size: 1.45rem; font-weight: 700; color: #2c3e50;
+    font-size: 1.3rem; font-weight: 700; color: #2c3e50;
     margin: 50px 0 15px; padding-bottom: 8px; border-bottom: 0px solid #f1f3f5;
 }
 
 /* --- 모달 내 카드 공통 스타일 --- */
 .modal-content .trouble-card {
-    background: #fff; 
-    border: 1px solid #e9ecef; 
-    border-left: 5px solid #bbe1de; 
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-left: 5px solid #bbe1de;
     padding: 15px;
     padding-right: 30px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     border-radius: 4px 10px 10px 4px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
 }
@@ -386,22 +389,19 @@ h4 {
     display: flex !important;
     gap: 15px;
     justify-content: center;
-    align-items: flex-start; /* 높이를 강제로 맞추지 않고 각자 비율대로 */
+    align-items: flex-start;
     width: 100%;
     margin: 20px 0 !important;
 }
 
 .wf-img img {
-    /* 기존 설정 유지 */
     width: 58% !important;
     flex: 1;
     max-width: 600px !important;
     margin: 0 !important;
     display: inline-block;
-
-    /* --- 잘림 방지 설정 --- */
-    height: auto !important;      
-    object-fit: scale-down !important; 
+    height: auto !important;
+    object-fit: scale-down !important;
     border-radius: 8px;
 }
 
@@ -410,9 +410,9 @@ h4 {
     display: block;
     position: relative;
     padding-left: 25px;
-    margin-bottom: 8px; 
-    margin-left: 30px; 
-    font-size: 1.05rem;
+    margin-bottom: 8px;
+    margin-left: 30px;
+    font-size: 1rem;
     color: #2c3e50;
 }
 
@@ -426,20 +426,20 @@ h4 {
 
 .modal-content .trouble-card div {
     display: flex;
-    align-items: flex-start; 
-    gap: 12px;               
-    margin-top: 0px;         
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 0px;
     margin-bottom: 12px;
-    padding-left: 70px; 
+    padding-left: 70px;
 }
 
 .status-label {
     display: inline-block;
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     padding: 2px 8px;
     border-radius: 6px;
-    flex-shrink: 0;         
+    flex-shrink: 0;
     text-align: center;
     width: 80px;
 }
@@ -455,10 +455,10 @@ h4 {
     padding: 4px 12px;
     border-radius: 6px;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin-bottom: 20px;
     margin-top: 10px;
-    margin-left: 35px; 
+    margin-left: 35px;
     border: 1px solid #d1f0ed;
 }
 
@@ -468,7 +468,7 @@ h4 {
 }
 
 .tech-list li {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: #555;
     margin-bottom: 10px;
 }
