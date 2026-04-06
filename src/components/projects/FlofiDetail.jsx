@@ -1,0 +1,106 @@
+export default function FlofiDetail() {
+  return (
+    <div className="project-detail">
+      <div className="project-name">🎹 FLOFI</div>
+      <div className="project-tagline">Style Transfer 기술을 활용한 음악 변환 및 스트리밍 플랫폼</div>
+
+      <span className="wf-img">
+        <img src="/resources/3.png" alt="FLOFI main" />
+      </span>
+
+      <h4 className="section-title">📌 Overview</h4>
+      <div className="contents">
+        <div className="trouble-card">
+          <ul className="role-list">
+            <li>사용자가 업로드한 MIDI 파일을 딥러닝 모델(Groove2Groove)을 통해 Lo-Fi 스타일로 변환합니다.</li>
+            <li>변환된 음원을 사용자의 취향에 맞게 실시간으로 커스터마이징(BPM, 리버브 등) 할 수 있습니다.</li>
+            <li>뽀모도로 타이머, 백색 소음 등 몰입을 위한 편의 기능을 활용할 수 있습니다.</li>
+            <li>캡스톤 디자인 및 창업 프로젝트 최우수상 수상</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4 className="section-title">🛠 Tech Stack & 💡 Why</h4>
+      <div className="contents">
+        <div className="trouble-card">
+          <p>
+            <span className="tech-badge">Flask</span>
+            <span className="tech-description">
+              <ul className="tech-list">
+                <li>
+                  <strong>경량성 및 모델 연동 최적화</strong><br />
+                  <p className="tech-why">AI 모델과의 원활한 연동을 위해 파이썬 프레임워크인 Flask를 채택하여 서버-모델 간 데이터 흐름 최적화</p>
+                </li>
+              </ul>
+            </span>
+          </p>
+          <hr />
+
+          <p>
+            <span className="tech-badge">Groove2Groove (AI)</span>
+            <span className="tech-description">
+              <ul className="tech-list">
+                <li>
+                  <strong>스타일 변환을 통한 서비스 경쟁력 확보</strong><br />
+                  <p className="tech-why">기존 MIDI 파일에 Lo-Fi 특유의 감성적인 스타일을 입힌 새로운 결과물을 생성함으로써 독창적인 가치 제공</p>
+                </li>
+                <li>
+                  <strong>사용자 중심의 음악 생성</strong><br />
+                  <p className="tech-why">사용자가 원하는 곡을 집중이나 취침에 적합한 Lo-Fi 음악으로 변환하여 실시간 재생 가능</p>
+                </li>
+              </ul>
+            </span>
+          </p>
+          <hr />
+
+          <p>
+            <span className="tech-badge">JavaScript & Tone.js</span>
+            <span className="tech-description">
+              <ul className="tech-list">
+                <li>
+                  <strong>정교한 오디오 데이터 조작</strong><br />
+                  <p className="tech-why">Tone.js 등 Web Audio Framework를 활용하여 브라우저 환경에서 MIDI 데이터를 분석하고 실시간 오디오 이펙트 적용</p>
+                </li>
+              </ul>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <h4 className="section-title">👨‍💻 Role & Contribution</h4>
+      <div className="trouble-card">
+        <ul className="role-list">
+          <li>
+            <strong>Leader</strong><br />
+            <p className="tech-why">Github, Notion 및 간트차트를 활용한 협업 프로세스 리딩</p>
+          </li>
+          <li>
+            <strong>Frontend Development</strong>
+            <p className="tech-why">MIDI 데이터 분석 및 조작 로직 구현, 사용자 맞춤 오디오 이펙트 시스템 구축</p>
+          </li>
+          <li>
+            <strong>AI Model 연동</strong>
+            <p className="tech-why">Groove2Groove 딥러닝 모델을 API 엔드포인트로 서버와 연동</p>
+          </li>
+          <li>
+            <strong>Utility Features</strong>
+            <p className="tech-why">뽀모도로 타이머, TODO 리스트, 백색소음 등 사용자 편의 기능 구현</p>
+          </li>
+        </ul>
+      </div>
+
+      <h4 className="section-title">🚨 Trouble Shooting</h4>
+      <div className="trouble-card">
+        <strong>정밀한 오디오 컨트롤을 위한 데이터 포맷 선정</strong><br />
+        <div>
+          <span className="status-label label-problem">Problem</span>
+          WAV 등 오디오 파일은 음원 데이터가 고정되어 있어 BPM이나 노트 단위의 정교한 조작에 한계가 있음
+        </div>
+        <div>
+          <span className="status-label label-solve">Solve</span>
+          오디오 신호가 아닌 '음악 정보'를 담은 MIDI 형식을 채택하고, 이를 JSON 데이터로 변환/분석하여 실시간 커스터마이징 로직 구현
+        </div>
+      </div>
+    </div>
+  );
+}
