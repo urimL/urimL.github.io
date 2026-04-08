@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const API_URL = 'http://localhost:8080/api/v1/profile/chat';
+const API_URL = '/api/v1/profile/chat';
 
 const CHIPS = [
   '기술 스택이 뭔가요?',
